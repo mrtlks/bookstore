@@ -13,8 +13,8 @@ import javax.persistence.OneToMany;
 public class Category {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-	private Long categoryid;
-	private String categoryname;
+	public Long categoryid; // oli pakko vaihtaa privatesta publiciin että toimii
+	public String categoryname;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
 	private List<Book> books;
@@ -28,6 +28,8 @@ public class Category {
 		super();
 		this.categoryname = categoryname;
 	}
+	
+	
 	
 	public Long getCategoryId() {
 		return categoryid;
@@ -55,6 +57,6 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Department [categoryid=" + categoryid + ", categoryname=" + categoryname + "]";
+		return "Category [categoryid=" + categoryid + ", categoryname=" + categoryname + "]";
 	}
 }

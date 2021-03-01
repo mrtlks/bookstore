@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 
 public class Book {
@@ -24,6 +26,11 @@ public class Book {
 		private String isbn;
 		private String price;
 		
+	 @JsonIgnore	//4) REST vältetään loppumaton looppi "You have to configure one-to-many relationship from JSON by
+	// using @JsonIgnore annotation. Otherwise entity relationship will
+	// cause endless loop (First student is serialized and it contains
+	// department which is then serialized which contains students which
+	// are then serialized….)"
 	 @ManyToOne
 	 @JoinColumn(name = "categoryid")
 		 private Category category;

@@ -35,7 +35,12 @@
 			<input type="text" th:field="*{price}" />
 			
 			<div style="clear: both; display: block; height: 10px;"></div>
-					
+			
+			<label for="listofcategories">Category</label>
+			<select id="listofcategories" th:field="*{category}" class="form-control">
+       		<option th:each="category: ${categories}" th:value="${category.categoryid}" 
+       		th:text="${category.categoryname}"></option>
+    		</select>		
 			
 			<label for="id"></label>
 			<input type="hidden" th:field="*{id}" />

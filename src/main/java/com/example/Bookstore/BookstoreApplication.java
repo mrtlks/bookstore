@@ -26,9 +26,9 @@ public class BookstoreApplication {
 			repository2.save(new Category("Comedy"));
 		
 
-			repository.save(new Book ("Pride and Prejudice", "Jane Austen", "1813", " 978-951-98548-9-2", "20,90", repository2.findByName("Horror").get(0)));
-			repository.save(new Book("Sense and Sensibility ", "Jane Austen", "1811", " 978-951-98548-9-5", "20,90", repository2.findByName("Romance").get(0)));
-			repository.save(new Book("Emma", "Jane Austen", "1815", " 978-951-98545-9-2", "20,90",repository2.findByName("Comedy").get(0)));
+			repository.save(new Book ("Pride and Prejudice", "Jane Austen", "1813", " 978-951-98548-9-2", "20,90", repository2.findByCategoryname("Horror").get(0)));
+			repository.save(new Book("Sense and Sensibility ", "Jane Austen", "1811", " 978-951-98548-9-5", "20,90", repository2.findByCategoryname("Romance").get(0)));
+			repository.save(new Book("Emma", "Jane Austen", "1815", " 978-951-98545-9-2", "20,90",repository2.findByCategoryname("Comedy").get(0)));
 		
 	
 		};

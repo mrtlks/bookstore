@@ -8,6 +8,7 @@
 	<h1>Add book</h1>
 	<div>
 		<form th:object="${book}" th:action="@{save}" action="#" method="post">
+		
 		  	<label for="title">Title</label>
 			<input type="text" id="title" th:field="*{title}" />
 			
@@ -32,7 +33,8 @@
 			<label for="price">Price</label>
 			<input type="text" th:field="*{price}" />
 			
-			<div style="clear: both; display: block; height: 10px;"></div>						
+			<div style="clear: both; display: block; height: 10px;"></div>	
+								
 		  	<label for="listofcategories">Category</label>
 			<select id="listofcategories" th:field="*{category}" class="form-control">
        		<option th:each="category: ${categories}" th:value="${category.categoryid}" 
